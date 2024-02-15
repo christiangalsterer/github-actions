@@ -4,8 +4,9 @@ on:
   workflow_call:
 
 permissions:
-  contents: read
-
+  actions: read
+  security-events: write
+  
 jobs:
   pre_snyk:
     runs-on: ubuntu-latest
