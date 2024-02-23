@@ -70,7 +70,7 @@ jobs:
           sarif_file: snyk.sarif    
       - name: Snyk Code Test
         if: ${{ ! (github.event_name == 'pull_request' && github.event.pull_request.user.login == 'renovate[bot]' && contains(github.event.pull_request.labels.*.name, 'renovate')) && (steps.changed-files.outputs.code_any_changed == 'true') }}
-        run: snyk code test ${{ github.server_url}}/${{ github.repository }} --org=christiangalsterer --sarif-file-output=snyk_code_test.sarif -d
+        run: snyk code test ${{ github.server_url}}/${{ github.repository }} -d --org=christiangalsterer --sarif-file-output=snyk_code_test.sarif
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       - name: Upload code test result to GitHub Code Scanning
