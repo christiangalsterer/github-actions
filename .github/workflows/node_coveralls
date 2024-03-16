@@ -1,0 +1,19 @@
+name: Coveralls
+
+on:
+  workflow_call:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 21.x
+      - name: Create Test Coverage
+        run: |
+          npm install
+          make test-coverage
+      - name: Report Coveralls
+        uses: coverallsapp/github-action@v2
