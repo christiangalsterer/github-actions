@@ -11,9 +11,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 21.x
+          cache: 'npm'
       - name: Create Test Coverage
         run: |
           npm install
-          make test:coverage
+          npm test:coverage
       - name: Report Coveralls
         uses: coverallsapp/github-action@v2
