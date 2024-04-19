@@ -1,0 +1,11 @@
+name: Rebase Pull Request
+on:
+  workflow_call:
+jobs:
+  rebase-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: peter-evans/rebase@v3
+        with:
+          exclude-labels: |
+            renovate
