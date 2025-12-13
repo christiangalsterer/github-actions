@@ -5,6 +5,7 @@ on:
   workflow_call:
 
 permissions:
+  id-token: write # Required for OIDC
   contents: read
 
 jobs:
@@ -18,5 +19,4 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
           cache: 'npm'
       - run: npm run publish-npm
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+
