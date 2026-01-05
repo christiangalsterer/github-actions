@@ -8,13 +8,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+      - name: Set up pnpm 
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
       - uses: actions/setup-node@v4
         with:
           node-version: 24.x
-          cache: 'npm'
+          cache: 'pnpm'
       - name: Create Test Coverage
         run: |
-          npm install
-          npm run test:coverage
+          pnpm install
+          pnpm run test:coverage
       - name: Report Coveralls
         uses: coverallsapp/github-action@v2
