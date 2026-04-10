@@ -47,7 +47,7 @@ jobs:
       - name: Set up Snyk CLI to check for security issues
         uses: snyk/actions/setup@master
       - name: Set up pnpm 
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v6
         with:
           version: 10
       - name: Setup Node
