@@ -1,0 +1,18 @@
+name: 'Continuous Integration'
+
+on:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5 
+      - name: Set up bun
+        uses: oven-sh/setup-bun@v2
+      - name: Run CI
+        run: bun run ci
