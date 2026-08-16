@@ -7,7 +7,8 @@ jobs:
   codecov:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - name: Checkout
+        uses: actions/checkout@v5 
       - name: Set up bun
         uses: oven-sh/setup-bun@v2
       - name: Set up Node.js
