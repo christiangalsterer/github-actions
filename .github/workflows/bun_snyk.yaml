@@ -21,7 +21,7 @@ jobs:
             src/**/*.ts
             test/**/*.ts
             package.json
-            pnpm-lock.yaml
+            bun.lock
             .github/workflows/**.yaml
   snyk:
     needs: pre_snyk
