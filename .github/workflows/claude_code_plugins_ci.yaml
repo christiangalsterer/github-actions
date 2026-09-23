@@ -28,3 +28,5 @@ jobs:
             uvx --from "git+https://github.com/agentskills/agentskills#subdirectory=skills-ref" skills-ref validate "$skill" || failed=1
           done
           exit $failed
+      - name: Run skillspector
+        run: uvx --from git+https://github.com/NVIDIA/skillspector.git skillspector scan ./skills/ --no-llm
