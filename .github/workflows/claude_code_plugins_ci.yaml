@@ -21,7 +21,7 @@ jobs:
       - name: Install apm 
         uses: microsoft/apm-action@v1
       - name: Run apm audit
-        run: apm audit --ci --no-cache
+        run: apm audit --ci --no-cache --no-drift
       
       - name: Run skillscheck
         run: uvx skillscheck ./skills
