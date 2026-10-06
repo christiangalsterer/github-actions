@@ -15,14 +15,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
-      - name: Install APM
-        run: curl -sSL https://aka.ms/apm-unix | sh  
-
       - name: Install uv
         uses: astral-sh/setup-uv@v10.0.1
 
-      - name: Run APM Audit
-        run: apm install && apm audit --ci
+      - name: Install apm 
+        uses: microsoft/apm-action@v1
+      - name: Run apm audit
+        run: apm audit --ci --no-cache
+      
       - name: Run skillscheck
         run: uvx skillscheck ./skills
       
