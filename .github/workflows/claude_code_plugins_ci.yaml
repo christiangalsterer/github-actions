@@ -22,7 +22,7 @@ jobs:
         uses: astral-sh/setup-uv@v10.0.1
 
       - name: Run APM Audit
-        run: apm audit
+        run: apm install && apm audit
       - name: Run skillscheck
         run: uvx skillscheck ./skills
       
