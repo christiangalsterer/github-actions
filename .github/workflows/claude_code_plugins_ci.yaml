@@ -20,6 +20,8 @@ jobs:
 
       - name: Install apm 
         uses: microsoft/apm-action@v1
+        with:
+          apm-version: 'latest'  
       - name: Run apm audit
         run: apm audit --ci --no-cache --no-policy --no-fail-fast --no-drift 
       
