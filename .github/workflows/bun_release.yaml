@@ -17,7 +17,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 24.x
+          node-version: 26.x
           registry-url: 'https://registry.npmjs.org'
       - run: bun run release:prepare
       - uses: googleapis/release-please-action@v4

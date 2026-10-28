@@ -19,7 +19,7 @@ jobs:
           version: 11
       - uses: actions/setup-node@v7
         with:
-          node-version: 24.x
+          node-version: 26.x
           registry-url: 'https://registry.npmjs.org'
           cache: 'pnpm'
       - run: pnpm run publish-npm
