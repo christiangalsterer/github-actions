@@ -42,7 +42,7 @@ jobs:
               - 'test/**/*.ts'
             deps:
               - package.json
-              - bun-lock.yaml
+              - bun.lock
               - '.github/workflows/*.yaml'
       - name: Set up Snyk CLI to check for security issues
         uses: snyk/actions/setup@master
