@@ -10,7 +10,7 @@ jobs:
   ci:
     strategy:
       matrix:
-        node-version: ['22.x', '23.x', '24.x']
+        node-version: ['22.x', '26.x', '26.x']
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
